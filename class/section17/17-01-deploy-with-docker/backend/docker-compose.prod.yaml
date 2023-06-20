@@ -1,0 +1,38 @@
+version: '3.7'
+
+# 컴퓨터들
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # volumes:
+    #   - ./src:/myfolder/src
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    ports:
+      - 3000:3000
+    env_file:
+      - ./.env.prod
+
+  # database:
+  #   # platform: linux/86_64
+  #   image: mysql:latest
+  #   environment:
+  #     MYSQL_DATABASE: 'mydocker'
+  #     MYSQL_ROOT_PASSWORD: '1234'
+  #   ports:
+  #     - 3306:3306
+# 1. 빌드하기
+# docker-compose -f 파일이름 build
+
+# 2. 실행하기
+# docker-compose up
+
+# 3. 도커 컴 접속하기
+# docker exec -it 컨테이너ID /bin/bash
+# mongo 몽고쉘 접속
+# show databases
+# use local
+# show collections
+# exit
