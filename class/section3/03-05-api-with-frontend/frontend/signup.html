@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    
+    <title>회원가입 연습하기</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function insyou() {
+            //1. 입력한 번호 가져오기
+            const pNum = document.getElementById("pNum").value
+
+            //2. 해당 휴대폰으로 인증번호 API 요청하기(fetch, axios 등 사용)
+            axios.post("http://localhost:3000/tokens/phone", {
+                pNum : pNum
+            }).then(res => {
+                console.log(res.data)
+                document.getElementById("result").innerText = res.data
+            })
+        }
+
+
+    </script>
+</head>
+<body>
+    <div>
+        휴대폰 번호 : 
+        <input id="pNum" type="text" placeholder="010-1234-5678"/>
+        <button onclick="insyou()">인증하기</button>
+
+    </div>
+    <div id="result">인증상태</div>
+    <button onclick="confirm()">회원가입하기</button>
+</body>
+</html>

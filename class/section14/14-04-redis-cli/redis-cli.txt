@@ -1,0 +1,31 @@
+PS C:\Users\박보라\Desktop\CODECAMP-BACKEND-BORA\class\section14\14-04-redis\backend> docker exec -it e0fcdf03ac7a /bin/bash
+root@e0fcdf03ac7a:/data# redis-cli
+127.0.0.1:6379> keys *
+(empty array)
+127.0.0.1:6379> set qqq apple
+OK
+127.0.0.1:6379> get qqq
+"apple"
+127.0.0.1:6379> ttl qqq
+(integer) -1
+127.0.0.1:6379> expire qqq 20
+(integer) 1
+127.0.0.1:6379> ttl qqq
+(integer) 15
+127.0.0.1:6379> ttl qqq
+(integer) 14
+127.0.0.1:6379> ttl qqq
+(integer) 14
+127.0.0.1:6379> ttl qqq
+(integer) 13
+127.0.0.1:6379> ttl qqq
+(integer) 12
+127.0.0.1:6379> ttl qqq
+(integer) 12
+127.0.0.1:6379> ttl qqq
+(integer) 11
+127.0.0.1:6379> ttl qqq
+(integer) 10
+127.0.0.1:6379> ttl qqq
+(integer) 6
+127.0.0.1:6379>

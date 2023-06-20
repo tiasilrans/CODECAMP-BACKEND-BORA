@@ -1,0 +1,15 @@
+{
+  "name": "03-03-rest-api-with-express-board",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start" : "nodemon index.js"
+
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
